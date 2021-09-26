@@ -1,3 +1,4 @@
+//stackproblem.c - Lab 02 - Keegan, Kelly
 #include <stdio.h>
 char stack[80];
 int top = 0;
