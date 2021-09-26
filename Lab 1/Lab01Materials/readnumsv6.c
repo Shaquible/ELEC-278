@@ -1,7 +1,7 @@
 // READNUMSV6.C - Lab01 - Keegan, Kelly
 
 #include <stdio.h>
-
+#include <stdlib.h>
 // Handy manifests
 #define EXIT_OK 0
 #define EXIT_ERROR -1
