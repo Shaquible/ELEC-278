@@ -1,7 +1,7 @@
 //stackproblem.c - Lab 02 - Keegan, Kelly
 #include <stdio.h>
 char stack[80];
-int top = 0;
+int top = -1;
 int push(char data);
 int main(void)
 {
@@ -20,7 +20,8 @@ int main(void)
     {
         printf("%c", stack[i]);
     }
-    printf("\n");
+    if (top >= 0)
+        printf("\n");
 }
 
 int push(char data)
@@ -29,6 +30,7 @@ int push(char data)
     {
         return 0;
     }
-    stack[top++] = data;
+    top++;
+    stack[top] = data;
     return 1;
 }
