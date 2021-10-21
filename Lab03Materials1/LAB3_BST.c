@@ -245,6 +245,7 @@ Node *findParent(Key k, Node *root)
 	return findParentHelper(k, root);
 } //findParent()
 
+//might need to redo
 void delete (Node *p, Node *n)
 // Delete node pointed to by n.
 // Parameters:
