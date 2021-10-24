@@ -255,29 +255,64 @@ void delete (Node *p, Node *n)
 	// Deletion has 3 cases - no subtrees, only left or right subtree, or both
 	// left and right subtrees.
 	Node *deleteNode = n; // Save copy of pointer to node to delete.
-	if (p->leftChild != NULL)
+	//for node with no child
+	if (n->leftChild == NULL && n->rightChild == NULL)
+	{
 		if (p->leftChild == n)
+		{
 			p->leftChild = NULL;
-	if (p->rightChild != NULL)
-		if (p->rightChild == n)
+		}
+		else
+		{
 			p->rightChild = NULL;
-	if (n->leftChild != NULL)
-	{ // there is left child
-		delete (n, n->leftChild);
-		// your code goes here  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-	}
-	else if (n->rightChild != NULL)
-	{ // there is a right child
-		delete (n, n->rightChild);
-		// your code goes here  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-	}
-	else
-	{ // no children
+		}
 		free(n);
 		return;
-		// your code goes here  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	}
-
+	//for nodes with two children
+	if (n->leftChild != NULL && n->rightChild != NULL)
+	{
+		//find sucsessor node
+		Node *current = n->rightChild;
+		Node *prev = NULL;
+		while (current->leftChild != NULL)
+		{
+			current = current->leftChild;
+			prev = current;
+		}
+		prev->leftChild = NULL;
+		n->value = current->value;
+		n->key = current->key;
+		free(current);
+	}
+	//for node with one child
+	if (n->leftChild != NULL || n->rightChild != NULL)
+	{
+		if (p->leftChild == n)
+		{
+			if (n->leftChild != NULL)
+			{
+				p->leftChild = n->leftChild;
+			}
+			else
+			{
+				p->leftChild = n->rightChild;
+			}
+		}
+		else
+		{
+			if (n->leftChild != NULL)
+			{
+				p->rightChild = n->leftChild;
+			}
+			else
+			{
+				p->rightChild = n->rightChild;
+			}
+		}
+		free(n);
+		return;
+	}
 } //delete()
 
 int withdraw(Key k, Node *root, Node *n)
