@@ -111,3 +111,7 @@ int countNodes(Node *root)
     }
     return count;
 }
+
+Node *findParent(Node *root, Node *n)
+{
+}

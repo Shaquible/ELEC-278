@@ -277,8 +277,8 @@ void delete (Node *p, Node *n)
 		Node *prev = NULL;
 		while (current->leftChild != NULL)
 		{
-			current = current->leftChild;
 			prev = current;
+			current = current->leftChild;
 		}
 		prev->leftChild = NULL;
 		n->value = current->value;
