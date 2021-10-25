@@ -12,6 +12,7 @@ typedef struct Node
 
 Node *newnode(int key, char data[]);
 Node *insert(Node *root, int key, char data[]);
+int countNodes(Node *root);
 int isSort(Node *root);
 int main(void)
 {
@@ -28,7 +29,7 @@ int main(void)
         sscanf(line, "%010d    %s\n", &temp1, &temp2);
         root = insert(root, temp1, temp2);
     }
-    printf("%i", isSort(root));
+    printf("%i, %i\n", isSort(root), countNodes(root));
 }
 
 Node *newnode(int key, char data[])
@@ -95,4 +96,18 @@ int isSort(Node *root)
         else
             return 0;
     }
+}
+
+int countNodes(Node *root)
+{
+    int count = 0;
+    if (root->left != NULL)
+    {
+        count += 1 + countNodes(root->left);
+    }
+    if (root->right != NULL)
+    {
+        count += 1 + countNodes(root->right);
+    }
+    return count;
 }
