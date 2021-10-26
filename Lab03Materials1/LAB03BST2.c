@@ -1,3 +1,4 @@
+//LAB03BST2.c - Lab 03 -Keegan, Kelly
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -20,30 +21,60 @@ Node *findNode(int key, Node *root);
 Node *findParent(Node *root, int key);
 int main(void)
 {
-
     char *filename = "IDENTS.txt";
     char *deletename = "DELETES.txt";
+    char *lookup = "LOOKUPS.txt";
     FILE *infile = fopen(filename, "r");
     char temp2[13];
     int temp1;
     char line[256];
-    int i = 0;
     Node *root = NULL;
     while (fgets(line, sizeof(line), infile) != NULL)
     {
         sscanf(line, "%010d    %s\n", &temp1, &temp2);
         root = insert(root, temp1, temp2);
     }
-    printf("%i, %i\n", isSort(root), countNodes(root));
+    if (isSort(root) == 0)
+    {
+        return 0;
+    }
+    printf("BST NODES:  %i\n", countNodes(root));
     fclose(infile);
-    FILE *deletefile = fopen(deletename, "r");
-    while (fgets(line, sizeof(line), deletefile) != NULL)
+    infile = fopen(deletename, "r");
+    while (fgets(line, sizeof(line), infile) != NULL)
     {
         sscanf(line, "%d", &temp1);
         root = delete (root, temp1);
     }
-    printf("%i\n", isSort(root));
-    printf("%i\n", countNodes(root));
+    if (isSort(root) == 0)
+    {
+        return 0;
+    }
+    printf("NODES AFTER DELETES %i\n", countNodes(root));
+    fclose(infile);
+    infile = fopen(lookup, "r");
+    while (fgets(line, sizeof(line), infile) != NULL)
+    {
+
+        sscanf(line, "%d", &temp1);
+        Node *temp = findNode(temp1, root);
+        char id[11];
+        for (int j = 0; j < 10; j++)
+        {
+            id[j] = line[j];
+        }
+        id[10] = '\0';
+        if (temp == NULL)
+        {
+
+            printf("ID %s PASSWORD <%s>\n", id, "NOT FOUND");
+        }
+        else
+        {
+            printf("ID %s PASSWORD <%s>\n", id, temp->password);
+        }
+    }
+    fclose(infile);
 }
 Node *findNode(int key, Node *root)
 {
@@ -54,6 +85,10 @@ Node *findNode(int key, Node *root)
             current = current->right;
         else
             current = current->left;
+        if (current == NULL)
+        {
+            return NULL;
+        }
     }
     return current;
 }
