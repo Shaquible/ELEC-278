@@ -20,33 +20,48 @@ typedef struct queue
 stack pop(stack stack);
 Node *newNode(int data);
 stack addToStack(Node *new, stack stack);
+queue addToQueue(Node *new, queue queue);
+queue removeFromQueue(queue queue);
 int main(void)
 {
     stack stack;
+    queue queue;
     stack.tos = NULL;
-    int earnings = 0;
-    while (1)
+    queue.front = NULL;
+    int Stackearnings = 0;
+    int QueueEarnings = 0;
+    int go = 1;
+    while (go == 1)
     {
         int n, m;
-        char word[4];
-        if (scanf("%s %i %i", word, &n, &m) == 0)
-            break;
-        if (strcmp(word, "BUY") == 0)
-        {
-            for (int i = 0; i < n; i++)
-                stack = addToStack(newNode(m), stack);
-        }
-
-        else
+        char word[5] = "'\0'";
+        scanf("%s %i %i", word, &n, &m);
+        if (strcmp(word, "buy") == 0)
         {
             for (int i = 0; i < n; i++)
             {
-                earnings += (m - stack.tos->data);
-                stack = pop(stack);
+                stack = addToStack(newNode(m), stack);
+                queue = addToQueue(newNode(m), queue);
             }
+            continue;
         }
+
+        else if (strcmp(word, "sell") == 0)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Stackearnings += (m - stack.tos->data);
+                stack = pop(stack);
+                QueueEarnings += (m - queue.front->data);
+                queue = removeFromQueue(queue);
+            }
+            continue;
+        }
+        else
+            go = 0;
     }
-    printf("%i", earnings);
+    printf("Stack earning: %i\n", Stackearnings);
+    printf("Queue earnings: %i\n", QueueEarnings);
 }
 
 Node *newNode(int data)
@@ -70,9 +85,36 @@ stack addToStack(Node *new, stack stack)
 
 stack pop(stack stack)
 {
-    stack.tos->prev->next = NULL;
     Node *tmp = stack.tos;
     stack.tos = stack.tos->prev;
+    //stack.tos->next = NULL;
     free(tmp);
     return stack;
+}
+
+queue addToQueue(Node *new, queue queue)
+{
+    if (queue.front != NULL)
+    {
+        Node *tmp = queue.front;
+        while (tmp->next != NULL)
+        {
+            tmp = tmp->next;
+        }
+        new->prev = tmp;
+        tmp->next = new;
+    }
+    else
+    {
+        queue.front = new;
+    }
+    return queue;
+}
+
+queue removeFromQueue(queue queue)
+{
+    Node *tmp = queue.front;
+    queue.front = queue.front->next;
+    free(tmp);
+    return queue;
 }
