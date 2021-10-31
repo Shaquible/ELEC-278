@@ -194,8 +194,10 @@ int height(Node *root)
 	int nodeheight = -1; // default returned for empty tree
 	if (root != NULL)
 	{
+		//recursively calls for the height calculation of each child
 		int leftH = height(root->leftChild);
 		int rightH = height(root->rightChild);
+		//adds the height of either the left or right tree depending on which is the larger
 		nodeheight = 1 + intmax(leftH, rightH);
 	}
 	return nodeheight;
@@ -206,6 +208,7 @@ Node *findParentHelper(Key k, Node *root)
 // Help find parent of node with key == k. Parameter root is node with
 // at least one child (see findParent()).
 {
+	//checks if the left and right child has the key were looking for if they arent NULL
 	if (root->leftChild != NULL)
 	{
 		if (k == root->leftChild->key)
@@ -216,6 +219,7 @@ Node *findParentHelper(Key k, Node *root)
 		if (k == root->rightChild->key)
 			return root;
 	}
+	//if the parent  wasn't found then it recursively calls itself on the left or right child to find the parent
 	if (k > root->key)
 	{
 		return findParentHelper(k, root->rightChild);
@@ -256,6 +260,7 @@ void delete (Node *p, Node *n)
 	// left and right subtrees.
 	Node *deleteNode = n; // Save copy of pointer to node to delete.
 	//for node with no child
+	//sets the parents pointer to the node to be deleted to NULL
 	if (n->leftChild == NULL && n->rightChild == NULL)
 	{
 		if (p->leftChild == n)
@@ -272,20 +277,24 @@ void delete (Node *p, Node *n)
 	//for nodes with two children
 	if (n->leftChild != NULL && n->rightChild != NULL)
 	{
-		//find sucsessor node
+		//find sucsessor node (the leftmost node in the right subtree)
 		Node *current = n->rightChild;
 		Node *prev = NULL;
+		//finds the leftmost node in the right subtree and its parent node
 		while (current->leftChild != NULL)
 		{
 			prev = current;
 			current = current->leftChild;
 		}
+		//sets the node you want to delete to have the key and value of the sucsessor node
+		//then deletes the sucsessor node and sets its parents pointer to it to NULL
 		prev->leftChild = NULL;
 		n->value = current->value;
 		n->key = current->key;
 		free(current);
 	}
 	//for node with one child
+	//it will remove the node to be deleted and sets the parents pointer to it to be the one tree of the deleted node
 	if (n->leftChild != NULL || n->rightChild != NULL)
 	{
 		if (p->leftChild == n)
