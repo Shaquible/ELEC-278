@@ -1,3 +1,4 @@
+//LAB3_BST.c - Lab 03 -Keegan, Kelly
 // LAB3_BST.C [140916]
 //
 // Code for ELEC278 Lab 3.  Some code has already been implemented.
