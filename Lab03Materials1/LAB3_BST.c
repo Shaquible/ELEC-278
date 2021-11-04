@@ -292,6 +292,7 @@ void delete (Node *p, Node *n)
 		n->value = current->value;
 		n->key = current->key;
 		free(current);
+		return;
 	}
 	//for node with one child
 	//it will remove the node to be deleted and sets the parents pointer to it to be the one tree of the deleted node
