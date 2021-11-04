@@ -201,7 +201,6 @@ Node *delete (Node *root, int key)
     }
     else
     {
-
         //no children or one child
         //if both children or null the first case is called and then when called again it will trigger the base case and return null
         //pushes the right branch onto the current place of the node
