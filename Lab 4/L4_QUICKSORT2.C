@@ -15,7 +15,6 @@ course and the semester listed above.
 
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
-
 #include <stdio.h>
 #include <stdlib.h>
 void insertionsort(int *a, int min, int max)

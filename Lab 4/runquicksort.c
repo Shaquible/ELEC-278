@@ -36,7 +36,7 @@ int verbose = 0;
 long unsigned int swaps = 0; // may be lots of swaps
 
 //#include "L4_UTILITYCODE.c"
-#include "L4_QUICKSORT2.c"
+#include "L4_QUICKSORT.c"
 
 int main(void)
 {

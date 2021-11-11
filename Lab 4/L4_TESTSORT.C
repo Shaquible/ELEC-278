@@ -285,7 +285,7 @@ int main(void)
 	//return 0;
 
 	printf("==Check array before sort\n");
-	if (array_sorted(NULL, pa, 0, size - 1, 1))
+	if (array_sorted(NULL, pa2, 0, size - 1, 1))
 	{
 		printf("Warning: Array is initially sorted\n");
 	}
@@ -296,30 +296,30 @@ int main(void)
 	swaps = 0;
 	int diff;
 	start = clock();
-	printf("Bubble Sort\n");
-	rslt = bubblesort(pa, 0, size - 1); //OK
-	printf("Insertion Sort\n");
-	//rslt = insertionsort(pa, 0, size - 1); //OK
+	//printf("Bubble Sort\n");
+	//rslt = bubblesort(pa, 0, size - 1); //OK
+	//printf("Insertion Sort\n");
+	//rslt = insertionsort(pa3, 0, size - 1); //OK
 	//printf("Heap Sort\n");
-	//rslt = heapsort(pa, size); //2B tested
+	//rslt = heapsort(pa3, size); //2B tested
 	//printf("Merge Sort\n");
-	//rslt = mergesort(pa, 0, size - 1); //OK
+	//rslt = mergesort(pa3, 0, size - 1); //OK
 	//printf("Quicksort\n");
-	//rslt = quicksort(pa, 0, size - 1); //OK
+	//rslt = quicksort(pa3, 0, size - 1); //OK
 	//Note: Radix sort does not need to be included in the comparisons
 	//printf ("Radix sort\n");		rslt = radixsort (pa, size);			 	 //OK
 	//printf("Selection Sort (Iterative)\n");
-	//rslt = selsortI(pa, 0, size - 1); //OK
+	//rslt = selsortI(pa3, 0, size - 1); //OK
 	//printf("Selection Sort (Recursive)\n");
-	//rslt = selsortR(pa, 0, size - 1); //OK
-	//printf("Shell Sort\n");
-	//rslt = ShellSort(pa, 0, size - 1); //OK
+	//rslt = selsortR(pa3, 0, size - 1); //OK
+	printf("Shell Sort\n");
+	rslt = ShellSort(pa3, 0, size - 1); //OK
 	end = clock();
 
 	printf("End time: %ld  Start time:  %ld  Diff: %ld\n",
 		   end, start, end - start);
 
-	if (array_sorted(NULL, pa, 0, size - 1, 1))
+	if (array_sorted(NULL, pa2, 0, size - 1, 1))
 		printf("==After sort, array is sorted\n");
 	else
 	{
