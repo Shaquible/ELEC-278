@@ -1,9 +1,4 @@
-Quicksort
-End time: 42  Start time:  31  Diff: 11
-==After sort, array is sorted
-Swaps:  381095  CPU time:  11
-
-Quicksort
-End time: 40  Start time:  33  Diff: 7
-==After sort, array is sorted
-Swaps:  185808  CPU time:  7
+Kelly Keegan and Jose Gonzalez   Size f Dataset:    50000
+                                 Elapsed time       Number of Swaps
+Original Quick Sort              11                 381095
+Modified Quick Sort              7                  185808
