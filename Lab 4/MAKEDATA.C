@@ -19,7 +19,7 @@ See LICENCE.MD for restrictions on the use of this code.
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
-#define DATASIZE pow(10, 4)
+#define DATASIZE 42000
 char *fnames[3] = {
 	"ASCENDING.TXT",
 	"DESCENDING.TXT",

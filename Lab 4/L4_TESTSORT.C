@@ -35,7 +35,7 @@ int verbose = 0;
 long unsigned int swaps = 0; // may be lots of swaps
 
 #include "L4_BUBBLESORT.c"
-#include "L4_HEAPSORT.C"
+//#include "L4_HEAPSORT.C"
 //#include "L4_INSTSORT.C"
 //#include "L4_MERGESORT.C"
 //#include "L4_QUICKSORT.C"
