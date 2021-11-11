@@ -103,7 +103,7 @@ int quicksort(int *a, int left, int right)
 	int diff = right - left;
 	if (diff)
 	{
-		if (diff < 6)
+		if (diff < 33)
 		{
 			insertionsort(a, left, right);
 			return swaps;
