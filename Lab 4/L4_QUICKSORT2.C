@@ -18,7 +18,6 @@ See LICENCE.MD for restrictions on the use of this code.
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "L4_UTILITYCODE.c"
 void insertionsort(int *a, int min, int max)
 // Work through array of numbers, placing each one in the correct place. Note
 // that insertion sort differs from bubblesort in that with insertion sort, one

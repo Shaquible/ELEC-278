@@ -1,17 +1,19 @@
 {
-  "files.associations": {
-    "L4_QUICKSORT.C": "cpp",
-    "MAKEDATA2.C": "cpp",
-    "MAKEDATA.C": "cpp",
-    "L4_HEAPSORT.C": "cpp",
-    "L4_INSTSORT.C": "cpp",
-    "L4_RADXSORT.C": "cpp",
-    "L4_SELSORT.C": "cpp",
-    "L4_TESTSORT.C": "cpp",
-    "L4_SHELLSORT.C": "cpp",
-    "L4_UTILITYCODE.C": "cpp",
-    "L4_QUICKSORT copy.C": "cpp",
-    "L4_QUICKSORT2.C": "cpp",
-    "L4_BCKTSORT.C": "cpp"
-  }
+	"files.associations": {
+		"L4_QUICKSORT.C": "cpp",
+		"MAKEDATA2.C": "cpp",
+		"MAKEDATA.C": "cpp",
+		"L4_HEAPSORT.C": "cpp",
+		"L4_INSTSORT.C": "cpp",
+		"L4_RADXSORT.C": "cpp",
+		"L4_SELSORT.C": "cpp",
+		"L4_TESTSORT.C": "cpp",
+		"L4_SHELLSORT.C": "cpp",
+		"L4_UTILITYCODE.C": "cpp",
+		"L4_QUICKSORT copy.C": "cpp",
+		"L4_QUICKSORT2.C": "cpp",
+		"L4_BCKTSORT.C": "cpp",
+		"L4_BUBBLESORT.C": "cpp",
+		"L4_MERGESORT.C": "cpp"
+	}
 }
