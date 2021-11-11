@@ -1,0 +1,4 @@
+Quicksort
+End time: 42  Start time:  31  Diff: 11
+==After sort, array is sorted
+Swaps:  381095  CPU time:  11
