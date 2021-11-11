@@ -15,7 +15,7 @@ course and the semester listed above.
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
 #include <stdlib.h>
-
+#include "L4_UTILITYCODE.c"
 // Each Bucket is implemented as linked list of nodes. Node has actual data
 // and pointer to next node.
 struct listnode
