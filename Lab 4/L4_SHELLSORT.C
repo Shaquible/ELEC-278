@@ -22,7 +22,7 @@ course and the semester listed above.
 
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
-#include "L4_UTILITYCODE.c"
+
 #include <stdlib.h>
 int ShellSort(int *pa, int min, int max)
 // Acknowledgement to Donald Shell, who invented the Shell sort.

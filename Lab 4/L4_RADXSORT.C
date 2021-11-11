@@ -39,7 +39,7 @@ See LICENCE.MD for restrictions on the use of this code.
 // This part of code contains fundamental pieces for radix sort.
 
 #include <stdlib.h>
-#include "L4_UTILITYCODE.c"
+
 // Definitions of structures used to manage data
 
 struct listnode

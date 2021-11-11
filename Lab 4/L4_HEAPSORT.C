@@ -1,6 +1,6 @@
 
 #include <stdlib.h>
-#include "L4_UTILITYCODE.c"
+//#include "L4_UTILITYCODE.c"
 #define LEFT(n) (2 * n + 1) // formula for index of left child of n
 #define RITE(n) (2 * n + 2) // formula for index of right child of n
 

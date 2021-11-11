@@ -1,0 +1,4 @@
+Kelly Keegan, Gonzalez Jose, Dataset size : 1000,
+	,RANDOM, 	,ASCENDING, 	,DESCDING, 	 
+Sort, Elapsed Time, Number of Swaps, Elapsed Time, Number of Swaps, Elapsed Time, Number of Swaps, 
+Bubble Sort, 5, 244946, 0, 0,  4, 499500, 

@@ -15,7 +15,7 @@ course and the semester listed above.
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
 #include <stdlib.h>
-#include "L4_UTILITYCODE.c"
+//#include "L4_UTILITYCODE.c"
 int bubbleup(int *a, int min, int max)
 // Bubble largest element to high-index end of array.
 // Returns number of swaps done.

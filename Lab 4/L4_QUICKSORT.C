@@ -16,7 +16,7 @@ course and the semester listed above.
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
 #include <stdlib.h>
-#include "L4_UTILITYCODE.c"
+
 void printarrowatposition(int posn)
 // Prints a V - a down arrow - where the pivot value will be
 {

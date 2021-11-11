@@ -16,7 +16,7 @@ course and the semester listed above.
 
 See LICENCE.MD for restrictions on the use of this code.
 ---------------------------------------------------------------------------- */
-#include "L4_UTILITYCODE.c"
+
 #include <stdlib.h>
 void merge(int *a, int left, int mid, int right)
 // Merges two subarrays of a[]. First subarray is a[left..mid]. Second
