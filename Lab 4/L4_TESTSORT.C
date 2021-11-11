@@ -34,15 +34,14 @@ int data[100] = {
 int verbose = 0;
 long unsigned int swaps = 0; // may be lots of swaps
 
-#include "L4_UTILITYCODE.c"
 #include "L4_BUBBLESORT.c"
 #include "L4_HEAPSORT.C"
-#include "L4_INSTSORT.C"
-#include "L4_MERGESORT.C"
-#include "L4_QUICKSORT.C"
-#include "L4_RADXSORT.C"
-#include "L4_SELSORT.C"
-#include "L4_SHELLSORT.C"
+//#include "L4_INSTSORT.C"
+//#include "L4_MERGESORT.C"
+//#include "L4_QUICKSORT.C"
+//#include "L4_RADXSORT.C"
+//#include "L4_SELSORT.C"
+//#include "L4_SHELLSORT.C"
 
 int main(void)
 {
@@ -57,8 +56,6 @@ int main(void)
 	//size = read_int_file ("DESCENDING.TXT", &pa);
 	//return 0;
 
-	if (verbose)
-		printarray("Array before any work done:", pa, 0, size - 1, 10);
 	printf("==Check array before sort\n");
 	if (array_sorted(NULL, pa, 0, size - 1, 1))
 	{
@@ -71,10 +68,11 @@ int main(void)
 	swaps = 0;
 
 	start = clock();
-	//printf ("Bubble Sort\n");		rslt = bubblesort (pa, 0, size-1);           //OK
+	printf("Bubble Sort\n");
+	rslt = bubblesort(pa, 0, size - 1); //OK
 	//printf ("Insertion Sort\n");	rslt = insertionsort (pa, 0, size-1);        //OK
-	printf("Heap Sort\n");
-	rslt = heapsort(pa, size); //2B tested
+	//printf("Heap Sort\n");
+	//rslt = heapsort(pa, size); //2B tested
 	//printf ("Merge Sort\n");		rslt = mergesort (pa, 0, size-1);            //OK
 	//printf ("Quicksort\n");		rslt = quicksort (pa, 0, size-1);            //OK
 	// Note: Radix sort does not need to be included in the comparisons
@@ -86,8 +84,7 @@ int main(void)
 
 	printf("End time: %ld  Start time:  %ld  Diff: %ld\n",
 		   end, start, end - start);
-	if (verbose || 1)
-		printarray("Final array:", pa, 0, size - 1, 8);
+
 	if (array_sorted(NULL, pa, 0, size - 1, 1))
 		printf("==After sort, array is sorted\n");
 	else
