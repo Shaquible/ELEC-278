@@ -2,3 +2,8 @@ Quicksort
 End time: 42  Start time:  31  Diff: 11
 ==After sort, array is sorted
 Swaps:  381095  CPU time:  11
+
+Quicksort
+End time: 40  Start time:  33  Diff: 7
+==After sort, array is sorted
+Swaps:  185808  CPU time:  7
