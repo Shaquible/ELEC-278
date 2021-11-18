@@ -39,11 +39,13 @@ int bogosort(int *a, int n)
 int main()
 {
     srand(time(0));
-    int numbers[] = {1, 10, 9, 7, 3};
+    int numbers[15];
+    for (int i = 0; i < 12; i++)
+        numbers[i] = rand() % 100;
     int i;
     int j;
-    j = bogosort(numbers, 5);
-    for (i = 0; i < 6; i++)
+    j = bogosort(numbers, 12);
+    for (i = 0; i < 12; i++)
         printf("%d ", numbers[i]);
     printf("\n");
     printf("took %i sorts \n", j);
